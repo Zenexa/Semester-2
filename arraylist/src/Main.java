@@ -7,18 +7,21 @@
 import java.util.ArrayList;
 public class Main {
     private ArrayList <Mahasiswa> dataMasiswa;
+    
+    
     public static void main(String[] args) throws Exception {
         Main Screen = new Main();
         Screen.inputData();
         Screen.cetakData();
     }
-    public void inputData() {
+
+    private void inputData() {
         dataMasiswa = new ArrayList<Mahasiswa>();
         String jawaban;
         int number = 1;
         do {
             System.out.println("________________________________");
-            System.out.println("Data Mahasiswa ke "+number);
+            System.out.println("Data Mahasiswa ke "+ number);
             System.out.print("NIM : ");
             String nim = System.console().readLine();
             System.out.print("Nama : ");
@@ -36,15 +39,20 @@ public class Main {
             number++;
         } while (jawaban.equals("Y") || jawaban.equals("y"));
     }
-    public void cetakData() {
+
+    private void cetakData() {
         System.out.println("\n\n=====================================================================================================");
         System.out.println("\t\t\t\tDAFTAR KELULUSAN MAHASISWA");
         System.out.println("=====================================================================================================");
         System.out.println("No\tNIM\t\tNama\t\tJurusan\t\t\tUmur\t\tJenis Kelamin");
         System.out.println("=====================================================================================================");
 
+
+        // variable untuk menampung jumlah mahasiswa laki laki / perempuan
         int mahasiswa_laki = 0;
         int mahasiswa_perempuan = 0;
+
+        // variable untuk menampung jumlah mahasiswa per-jurusan
         int mahasiswa_ti = 0;
         int mahasiswa_si = 0;
         int mahasiswa_dkv = 0;
@@ -81,7 +89,7 @@ public class Main {
         System.out.println("Jumlah mahasiswa Sistem Informasi : " + mahasiswa_si);
         System.out.println("Jumlah mahasiswa DKV : " + mahasiswa_dkv);
 
-
-
     }
+
+    
 }
