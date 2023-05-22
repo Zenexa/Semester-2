@@ -2,22 +2,22 @@ public class heap {
     private static void heapSort(int[] arr, String order) {
         int n = arr.length;
 
-        // Membangun max heap
+        // membuat max heap
         for (int i = n / 2 - 1; i >= 0; i--)
             heapify(arr, n, i);
 
-        // Melempar elemen satu per satu dari heap
+        // memindahkan elemen satu per satu dari heap
         for (int i = n - 1; i >= 0; i--) {
             // Memindahkan akar saat ini ke akhir
             int temp = arr[0];
             arr[0] = arr[i];
             arr[i] = temp;
 
-            // Memanggil max heapify pada heap yang dikurangi
+            // Memanggil fungsi max heapify pada heap yang dikurangi
             heapify(arr, i, 0);
         }
 
-        // Membalik urutan jika order adalah descending
+        // jika descending
         if (order.equals("descending")) {
             for (int i = 0; i < n / 2; i++) {
                 int temp = arr[i];
@@ -28,7 +28,7 @@ public class heap {
     }
 
     private static void heapify(int[] arr, int n, int i) {
-        int largest = i; // Inisialisasi largest sebagairoot
+        int largest = i; // Inisialisasi largest sebagai root
         int l = 2 * i + 1; // kiri = 2*i + 1
         int r = 2 * i + 2; // kanan = 2*i + 2
 
